@@ -134,10 +134,14 @@ bool Overlap::CalculateIntegrals(Orbitals* _orbitalsA, Orbitals* _orbitalsB,
         if(monomer->type != dimer->type){
 	  throw std::runtime_error("\nERROR: Atom types do not agree in dimer and monomers\n");
         }
+	  /*
+	  * Somehow this test is weird, the molecules and dimers are centered on them center of mass,
+	  * therefore, the coordinates can not agree ??
         if(std::abs(monomer->x-dimer->x)>0.001 || std::abs(monomer->y-dimer->y)>0.001 || std::abs(monomer->z-dimer->z)>0.001){
             CTP_LOG(logERROR,*_pLog) << "======WARNING=======\n Coordinates of monomers and dimer atoms do not agree, do you know what you are doing?\n " << std::flush;
             break;
         }
+	*/
         
     }
     
